@@ -71,10 +71,86 @@ div {
     text-align: center;
 }
 
-
-.sobremi {
-    background-color: #cfa4a0;
+.inicio{
+    padding-top: 100px;
+    background-color: #41a2a1;
 }
+/* Contenedor de la sección "Sobre mí" */
+.sobremi-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b3b3b;
+}
+
+.sobremi-imagen img {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sobremi-info {
+    max-width: 500px;
+    text-align: left;
+}
+
+/* Cards de Proyectos */
+.proyectos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+    width: 300px;
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.github-link img {
+    width: 24px;
+    margin-top: 0.5rem;
+}
+
+/* Carrusel */
+.carrucel-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.carrucel-item {
+    flex: 0 0 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
 
 
 
