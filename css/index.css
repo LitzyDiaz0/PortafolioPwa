@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ededed;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #3b3b3b;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin-left: auto; 
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 5px; 
+}
+
+.nav ul li a:hover {
+    background-color: #00bbd491;
+    text-decoration: underline 2px rgb(255, 255, 255);
+    text-underline-offset: 4px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-inline: 20px;
+    transition: 0.5s;
+}
+
+
+.menu-toggle {
+    display: none;
+    background-color: #5e6264;
+    border: solid rgb(76, 76, 76);
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: auto; 
+}
+
+/* Sections */
+div {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+
+.sobremi {
+    background-color: #cfa4a0;
+}
+
+
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 3.5rem;
+        right: 0;
+        background-color: #333;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav ul li a {
+        text-align: right;
+    }
+}
