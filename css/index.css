@@ -1,3 +1,4 @@
+/* Reseteo básico */
 * {
     margin: 0;
     padding: 0;
@@ -5,12 +6,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #ededed;
     font-family: 'Libre Baskerville', serif;
+    line-height: 1.6;
+    background-color: #ededed;
 }
 
 .nav {
@@ -37,26 +35,18 @@ body {
 .nav ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s, background-color 0.3s;
     padding: 0.5rem 1rem;
     border-radius: 5px; 
+    transition: background-color 0.3s;
 }
 
 .nav ul li a:hover {
     background-color: #00bbd491;
-    text-decoration: underline 2px rgb(255, 255, 255);
-    text-underline-offset: 4px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    padding-inline: 20px;
-    transition: 0.5s;
 }
-
 
 .menu-toggle {
     display: none;
     background-color: #5e6264;
-    border: solid rgb(76, 76, 76);
     padding: 5px;
     border-radius: 10px;
     color: white;
@@ -65,43 +55,63 @@ body {
     margin-left: auto; 
 }
 
-/* Sections */
-div {
-    padding: 4rem 1rem;
+h2 {
     text-align: center;
+    padding-top: 30px;
+    font-size: 30px;
 }
 
-.inicio{
-    padding-top: 100px;
-    background-color: #41a2a1;
+p {
+    font-size: 1rem;
 }
-/* Contenedor de la sección "Sobre mí" */
+
+/* Sección Inicio */
+.inicio {
+    padding-top: 100px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.inicio img{
+    width: 200px;
+}
+
+.sobremi {
+    background-color: #5bc2b6;
+}
+
+.sobremi h2 {
+    color: #000000;
+}
+
 .sobremi-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
-    align-items: center;
     justify-content: center;
-    background-color: #3b3b3b;
+    align-items: center;
+    padding-bottom: 2rem;
 }
 
 .sobremi-imagen img {
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: auto;
     border-radius: 50%;
-    object-fit: cover;
 }
 
 .sobremi-info {
     max-width: 500px;
-    text-align: left;
+    color: #fff;
+    text-align: justify;
 }
 
 /* Cards de Proyectos */
 .proyectos-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem;
     justify-content: center;
+    padding: 2rem;
 }
 
 .card {
@@ -111,71 +121,200 @@ div {
     padding: 1rem;
     text-align: center;
     transition: transform 0.3s;
-    width: 300px;
+    width: 320px;
 }
 
 .card img {
     width: 100%;
-    height: 120px;
+    height: 200px;
     object-fit: cover;
     border-radius: 5px;
-}
-
-.card h3 {
-    margin: 1rem 0 0.5rem;
 }
 
 .card:hover {
     transform: scale(1.05);
 }
 
-.github-link img {
-    width: 24px;
-    margin-top: 0.5rem;
-}
-
-/* Carrusel */
-.carrucel-container {
+.habilidades-y-carrusel {
     display: flex;
-    overflow-x: scroll;
-    gap: 1rem;
-    padding: 1rem 0;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en filas si no hay espacio */
+    justify-content: space-between; /* Asegura que haya espacio entre ambos bloques */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin: 2rem 0;
+    gap: 1rem; /* Espaciado entre bloques */
 }
 
-.carrucel-item {
-    flex: 0 0 300px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.habilidades, 
+.carousel {
+    flex: 1 1 48%; /* Cada sección ocupa 48% del ancho disponible */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+}
+
+.habilidades {
+    text-align: left; /* Alineación del texto */
     padding: 1rem;
-    text-align: center;
+    background-color: #f9f9f9; /* Fondo para diferenciar la sección */
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.carousel {
+    text-align: center; /* Centra los botones y el contenido del carrusel */
+}
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .habilidades-y-carrusel {
+        flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos en pantallas pequeñas */
+    }
+
+    .habilidades, 
+    .carousel {
+        flex: 1 1 100%; /* Cada sección ocupa el 100% del ancho disponible */
+    }
+}
+
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    list-style: none;
+}
+
+.carousel-slide img {
+    width: auto;
+    height: 600px;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Botones */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-button {
+        font-size: 1.5rem;
+        padding: 0.4rem;
+    }
+}
 
 
 /* Diseño responsive */
 @media (max-width: 768px) {
+    .images-wrapper img {
+        height: 200px;
+    }
+
+    button.prev, button.next {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 25px;
+        padding-inline: 20px;
+    }
+    h2 {
+        font-size: 15px;
+    }
+    li {
+        font-size: 13px;
+    }
     .nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 3.5rem;
+        top: 4.5rem;
         right: 0;
         background-color: #333;
         padding: 1rem;
         border-radius: 8px;
     }
-
     .nav ul.active {
         display: flex;
     }
-
     .menu-toggle {
         display: block;
     }
 
-    .nav ul li a {
-        text-align: right;
+    .sobremi-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .sobremi-info {
+        padding-inline: 30px;
+    }
+
+    .sobremi-imagen img {
+        width: 50%;
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .proyectos-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        padding: 2rem;
+        
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
     }
 }
