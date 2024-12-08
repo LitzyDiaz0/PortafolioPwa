@@ -6,7 +6,7 @@ urlsToCache = [
     '/index.html',
     '/css/style.css',
     '/js/scripts.js',
-    './assets/favicon.ico',
+    '/assets/favicon.ico',
     './assets/img/animeli.png',
     './assets/img/carrusel1.jpeg',
     './assets/img/carrusel2.jpeg',
@@ -26,6 +26,8 @@ urlsToCache = [
     './assets/img/portafolio1.png',
     './assets/img/smarth.png',
     './assets/img/yo.jpg',
+    './img/fav-icon-192x192.png',
+    './img/fav-icon-512x512.png',
 ];
 
 //Funcion de instalacion
