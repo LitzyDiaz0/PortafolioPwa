@@ -24,7 +24,6 @@ urlsToCache = [
     './assets/img/portafolio1.png',
     './assets/img/smarth.png',
     './assets/img/yo.jpg',
-    './css/styles.css'
 ];
 
 //Funcion de instalacion
