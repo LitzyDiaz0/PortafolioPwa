@@ -123,11 +123,36 @@ border-radius: 50%;
 margin-bottom: 20px;
 }
 
+.box {
+    margin-top: 30px;
+    background-color: #f8f9fab6; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    padding: 20px 20px; /* Espaciado interno */
+    font-size: 16px;
+    text-align: center; 
+    color: #333; 
+    transition: transform 0.2s ease; 
+    margin-inline: 10px;
+    width: 250px;
+    height: 130px;
+}
+
+.box:hover {
+    margin-top: 0;
+transform: translateY(-5px);
+}
+
+.box img{
+    width: 50px;
+}
+
 .habilidades-y-carrusel{
-    background-color:#e78483;
+    background-color:#cdcdcd;
     text-align: justify;
     padding-bottom: 30px;
 }
+
 
 .carrucel{   
     width: auto; 
@@ -167,6 +192,7 @@ margin-bottom: 20px;
 
 .card:hover {
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 
@@ -243,5 +269,15 @@ margin-bottom: 20px;
         height: auto;
         object-fit: cover;
         border-radius: 5px;
+    }
+
+    .box {
+        font-size: 10px;
+        width: 150px;
+        height: 100px;
+        margin-inline: 10px;
+    }
+    .box img{
+        width: 30px;
     }
 }
