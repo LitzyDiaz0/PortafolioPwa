@@ -199,6 +199,8 @@ transform: translateY(-5px);
     text-align: center;
     transition: transform 0.3s;
     width: 320px;
+    position: relative;
+    overflow: hidden; 
 }
 
 .card img {
@@ -210,7 +212,36 @@ transform: translateY(-5px);
 
 .card:hover {
     transform: scale(1.05);
+    background-color: rgba(17, 71, 67, 0.692);
     cursor: pointer;
+}
+
+.card h3 {
+    color: rgb(0, 0, 0);
+    z-index: 1; 
+}
+
+.card:hover h3 {
+    color: #ffffff;
+}
+.card:hover img {
+    filter: brightness(30%);
+}
+
+.github-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .github-link {
+    opacity: 1; /* Muestra el ícono al hacer hover */
 }
 .trayectoria{
     padding-bottom: 30px;
@@ -283,8 +314,8 @@ footer h2{
 }
 
 .iconos-redes-sociales a:hover {
-    background-color:#fadbe1;
-    border: 2px solid #ca9a96;
+    background-color:#52c4c4;
+    border: 2px solid #196f79;
 }
 
 .iconos-redes-sociales a:hover i {
@@ -403,8 +434,8 @@ footer h2{
 
     .box {
         font-size: 10px;
-        width: 150px;
-        height: 110px;
+        width: 130px;
+        height: 130px;
         margin-inline: 10px;
     }
     .box img{
@@ -435,5 +466,8 @@ footer h2{
     }
     .footer-texto{
         font-size: 16px;
+    }
+    .derechos-de-autor {
+        font-size: 10px;
     }
 }
