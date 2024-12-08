@@ -1,12 +1,11 @@
 {
     "name":"Portafolio Web",
-    "short_name":"PWA",
+    "short_name":"Portafolio",
     "description":"Esta es mi primer PWA",
     "display":"standalone", 
     "start_url":"/index.html",
-    "background_color":"#ededed",
+    "background_color":"#ffffff",
     "theme_color":"#ededed",
-    "orientation":"portrait",
     "scope":"./",
     "lang":"es-MX",
     "icons":[
