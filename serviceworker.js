@@ -2,7 +2,7 @@
 const CACHE_NAME = "V1_cache_PWA_IDGS";
 
 urlsToCache = [
-    './',
+    '/',
     '/index.html',
     '/css/style.css',
     '/js/scripts.js',
@@ -36,7 +36,8 @@ self.addEventListener('install', e =>{
         caches.open(CACHE_NAME)
         .then(cache =>{
             return cache.addAll(urlsToCache)
-            .then(() => self.skipWaiting)
+    .then(() => self.skipWaiting());
+
         })
 
     )
