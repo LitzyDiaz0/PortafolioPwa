@@ -6,6 +6,7 @@ urlsToCache = [
     '/index.html',
     '/css/style.css',
     '/js/scripts.js',
+    '/manifest.json',
     '/assets/favicon.ico',
     './assets/img/animeli.png',
     './assets/img/carrusel1.jpeg',
@@ -38,49 +39,42 @@ urlsToCache = [
 
 //Funcion de instalacion
 //almacena el nombre y los archivos que van a ir guardados en cache
-
-self.addEventListener('install', e =>{
-    e.waitUntil( //le decimos que detenga el evento hasta que se ejecute lo siguiente
-        caches.open(CACHE_NAME)
-        .then(cache =>{
-            return cache.addAll(urlsToCache)
-    .then(() => self.skipWaiting());
-
-        })
-
-    )
-})
-
-self.addEventListener('activate', e =>{
-    const listaBlancaCache = [CACHE_NAME];
-
+self.addEventListener('install', e => {
     e.waitUntil(
-        caches.keys()
-        .then(nombresCache => {
-            return Promise.all(
-                nombresCache.map(nombresCache =>{
-                    if(listaBlancaCache.indexOf(nombresCache) === -1){
-                        return caches.delete(nombresCache)
-                    }
-                })
-            )
+    caches.open(CACHE_NAME)
+        .then(cache => {
+        console.log('Cache abierta y recursos agregados');
+        return cache.addAll(urlsToCache);
         })
-        //activamos la cache actualizada
-        .then(()=> self.clients.claim())
-    )
+        .then(() => self.skipWaiting())
+    );
+});
 
-})
-
-//fetch consulta al servidor para saber si esta en linea
-self.addEventListener('fetch', e =>{
-    e.respondWith(
-        caches.match(e.request)
-        .then(res =>{
-            if(res)
-            {
-                return res
+self.addEventListener('activate', e => {
+    const allowedCaches = [CACHE_NAME];
+    e.waitUntil(
+    caches.keys()
+        .then(cacheNames => {
+        return Promise.all(
+            cacheNames.map(cache => {
+            if (!allowedCaches.includes(cache)) {
+                return caches.delete(cache);
             }
-            return fetch(e.request)
+            })
+        );
         })
-    )
-})
+        .then(() => self.clients.claim())
+    );
+});
+
+self.addEventListener('fetch', e => {
+    e.respondWith(
+    caches.match(e.request)
+        .then(response => {
+        if (response) {
+            return response; // Devuelve el recurso desde la caché si existe
+        }
+        return fetch(e.request).catch(() => new Response('No disponible'));
+        })
+    );
+});
