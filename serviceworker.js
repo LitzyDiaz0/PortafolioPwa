@@ -7,6 +7,8 @@ urlsToCache = [
     '/css/style.css',
     '/js/scripts.js',
     '/manifest.json',
+    '/serviceworker.js',
+    '/script.js',    
     '/assets/favicon.ico',
     './assets/img/animeli.png',
     './assets/img/carrusel1.jpeg',
