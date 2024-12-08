@@ -4,29 +4,25 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+//efecto de escritura
+document.addEventListener("DOMContentLoaded", function () {
+    const text = "Creadora de Desarrollo de Software Multiplataforma y Sitios webs";
+    const typewriter = document.getElementById("typewriter");
+    let index = 0;
 
+    function typeEffect() {
+        if (index < text.length) {
+            typewriter.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 100); 
+        } else {
+            setTimeout(() => {
+                typewriter.textContent = ""; 
+                index = 0; 
+                typeEffect(); 
+            }, 3000); 
+        }
+    }
 
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const prevButton = document.querySelector('.carousel-button.prev');
-const nextButton = document.querySelector('.carousel-button.next');
-
-let currentIndex = 0;
-
-// Function to update the position of the carousel
-const updateCarousel = (index) => {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-};
-
-// Next button event listener
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateCarousel(currentIndex);
-});
-
-// Previous button event listener
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateCarousel(currentIndex);
+    typeEffect();
 });

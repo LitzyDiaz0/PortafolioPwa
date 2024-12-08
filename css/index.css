@@ -3,10 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
 }
 
 body {
-    font-family: 'Libre Baskerville', serif;
     line-height: 1.6;
     background-color: #ededed;
 }
@@ -15,7 +15,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 80px;
+    height: 70px;
     background-color: #3b3b3b;
     color: #fff;
     display: flex;
@@ -30,6 +30,7 @@ body {
     display: flex;
     gap: 2rem;
     margin-left: auto; 
+    margin-top: 20px;
 }
 
 .nav ul li a {
@@ -55,57 +56,90 @@ body {
     margin-left: auto; 
 }
 
-h2 {
+h2{
     text-align: center;
     padding-top: 30px;
     font-size: 30px;
+    font-family: "Libre Baskerville", serif;
+    
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 p {
     font-size: 1rem;
 }
 
-/* Sección Inicio */
+.sobremi p{
+    text-align: justify;
+}
+
 .inicio {
     padding-top: 100px;
     text-align: center;
-    padding-bottom: 30px;
+    background-color: #cfa4a0;
 }
 
 .inicio img{
     width: 200px;
-}
-
-.sobremi {
-    background-color: #5bc2b6;
-}
-
-.sobremi h2 {
-    color: #000000;
-}
-
-.sobremi-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 2rem;
-}
-
-.sobremi-imagen img {
-    width: 70%;
-    height: auto;
     border-radius: 50%;
+    margin-bottom: 30px;
 }
 
-.sobremi-info {
-    max-width: 500px;
-    color: #fff;
+.escritura{
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #795e5b; 
+}
+/* Estilo responsivo para el texto de escritura */
+#typewriter {
+    font-size: clamp(1rem, 5vw, 2rem); 
+    color: white; 
+    white-space: normal; 
+    overflow: hidden; 
+    border-right: 3px solid rgb(255, 255, 255);
+    display: inline-block;
+    max-width: 100%; 
+}
+
+/* Cursor que simula la escritura */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+#typewriter {
+    animation: blink 0.7s steps(1) infinite;
+}
+
+
+.imagen{
+width: 40%;
+text-align: center;
+border-radius: 50%;
+margin-bottom: 20px;
+}
+
+.habilidades-y-carrusel{
+    background-color:#e78483;
     text-align: justify;
+    padding-bottom: 30px;
 }
 
-/* Cards de Proyectos */
+.carrucel{   
+    width: auto; 
+    height: 250px;       
+    object-fit: cover;  
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgb(149, 149, 149);
+}
+
 .proyectos-container {
     display: flex;
     flex-wrap: wrap;
@@ -135,114 +169,6 @@ p {
     transform: scale(1.05);
 }
 
-.habilidades-y-carrusel {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se acomoden en filas si no hay espacio */
-    justify-content: space-between; /* Asegura que haya espacio entre ambos bloques */
-    align-items: center; /* Alinea verticalmente los elementos */
-    margin: 2rem 0;
-    gap: 1rem; /* Espaciado entre bloques */
-}
-
-.habilidades, 
-.carousel {
-    flex: 1 1 48%; /* Cada sección ocupa 48% del ancho disponible */
-    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
-}
-
-.habilidades {
-    text-align: left; /* Alineación del texto */
-    padding: 1rem;
-    background-color: #f9f9f9; /* Fondo para diferenciar la sección */
-    margin-left: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.carousel {
-    text-align: center; /* Centra los botones y el contenido del carrusel */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .habilidades-y-carrusel {
-        flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
-        align-items: center; /* Centra los elementos en pantallas pequeñas */
-    }
-
-    .habilidades, 
-    .carousel {
-        flex: 1 1 100%; /* Cada sección ocupa el 100% del ancho disponible */
-    }
-}
-
-.carousel {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-track-container {
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    list-style: none;
-}
-
-.carousel-slide img {
-    width: auto;
-    height: 600px;
-    display: block;
-    border-radius: 10px;
-}
-
-/* Botones */
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 10;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
-
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .carousel-button {
-        font-size: 1.5rem;
-        padding: 0.4rem;
-    }
-}
-
 
 /* Diseño responsive */
 @media (max-width: 768px) {
@@ -257,7 +183,7 @@ p {
         font-size: 25px;
         padding-inline: 20px;
     }
-    h2 {
+    h2{
         font-size: 15px;
     }
     li {
@@ -280,21 +206,21 @@ p {
         display: block;
     }
 
-    .sobremi-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .sobremi-info {
-        padding-inline: 30px;
-    }
-
-    .sobremi-imagen img {
-        width: 50%;
-        height: auto;
-    }
+.card{
+    width: 250px;
+}
 }
 
 @media (max-width: 500px) {
+
+    p {
+        font-size: 10px;
+        margin-inline: 15px;
+    }
+    h3{
+        font-size: 15px;
+        margin-inline: 2px;
+    }
     .proyectos-container {
         display: flex;
         flex-wrap: wrap;
@@ -310,6 +236,7 @@ p {
         padding: 1rem;
         text-align: center;
         transition: transform 0.3s;
+        width: 350px;
     }
     .card img {
         width: 100%;
