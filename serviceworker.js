@@ -1,9 +1,11 @@
 
 const CACHE_NAME = "V1_cache_PWA_IDGS";
 
-//todo va en cache audios, estilos, etc
 urlsToCache = [
     './',
+    '/index.html',
+    '/css/style.css',
+    '/js/scripts.js',
     './assets/favicon.ico',
     './assets/img/animeli.png',
     './assets/img/carrusel1.jpeg',
