@@ -26,6 +26,12 @@ urlsToCache = [
     './assets/img/portafolio1.png',
     './assets/img/smarth.png',
     './assets/img/yo.jpg',
+    './img/favicon-16x16.png',
+    './img/favicon-32x32.png',
+    './img/fav-icon-60x60.png',
+    './img/fav-icon-96x96.png',
+    './img/fav-icon-120x120.png',
+    './img/fav-icon-180x180.png',
     './img/fav-icon-192x192.png',
     './img/fav-icon-512x512.png',
 ];
