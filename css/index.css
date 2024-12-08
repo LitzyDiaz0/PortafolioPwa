@@ -42,7 +42,9 @@ body {
 }
 
 .nav ul li a:hover {
-    background-color: #00bbd491;
+    background-color: #efefef57;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .menu-toggle {
@@ -65,6 +67,7 @@ h2{
 }
 
 h3 {
+    font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -124,7 +127,7 @@ margin-bottom: 20px;
 }
 
 .box {
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: #f8f9fab6; 
     border-radius: 15px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
@@ -147,22 +150,36 @@ transform: translateY(-5px);
     width: 50px;
 }
 
+.carrcel{
+    margin-top: 30px;
+}
 .habilidades-y-carrusel{
     background-color:#cdcdcd;
     text-align: justify;
-    padding-bottom: 30px;
+}
+.filahabilidad {
+    padding-bottom: 50px;
 }
 
-
 .carrucel{   
-    width: auto; 
-    height: 250px;       
+    display: none;
+    width: 100%;  
     object-fit: cover;  
+}
+
+.carrucel-desk{
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgb(149, 149, 149);
+}
+
+.proyectos{
+    background-color: #ebebeb ;
 }
 
 .proyectos-container {
@@ -175,6 +192,7 @@ transform: translateY(-5px);
 
 .card {
     background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
@@ -194,8 +212,108 @@ transform: translateY(-5px);
     transform: scale(1.05);
     cursor: pointer;
 }
+.trayectoria{
+    padding-bottom: 30px;
+}
+
+.trayectoria-fila {
+    justify-content: center; 
+    height: 100%;
+    
+    border: 2px solid rgba(129, 129, 129, 0.591); 
+}
+
+.trayecto-col {
+    padding: 20px; /* Espaciado interno */
+    border-right: 0.5px solid rgb(81, 81, 81);
+    text-align: justify;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+    min-height: 450px; /* Define una altura mínima para mantener consistencia */
+}
+
+.trayecto-col:hover {
+    background-color: #7da7a2be; 
+    border-color: #0c6461; 
+    color: rgb(53, 53, 53);
+}
+
+.trayectoria li{
+    font-size: 14px;
+    line-height: 2; 
+    text-align: justify;
+}
 
 
+/* footer */
+
+footer {
+    min-height: 20px;
+    background-color: #333;
+    color: #ffffff;
+}
+footer h2{
+    text-decoration: underline 1px solid;
+    text-underline-offset: 5px;
+    padding-top: 0;
+}
+.footer-texto {
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.iconos-redes-sociales a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover {
+    background-color:#fadbe1;
+    border: 2px solid #ca9a96;
+}
+
+.iconos-redes-sociales a:hover i {
+    color: black;
+}
+
+.derechos-de-autor {
+    font-size: 15px;
+    color: #aeaeae;
+    padding: 20px;
+}
+
+@media (max-width: 1000px) {
+    .trayectoria-fila {
+        justify-content: center; 
+        height: 100%;
+        border: 0; 
+    }
+    
+    .trayecto-col {
+        padding: 20px; /* Espaciado interno */
+        
+        border: 2px solid rgba(129, 129, 129, 0.591); 
+        text-align: justify;
+        transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+        min-height: 200px; /* Define una altura mínima para mantener consistencia */
+    }
+
+}
 /* Diseño responsive */
 @media (max-width: 768px) {
     .images-wrapper img {
@@ -210,7 +328,7 @@ transform: translateY(-5px);
         padding-inline: 20px;
     }
     h2{
-        font-size: 15px;
+        font-size: 20px;
     }
     li {
         font-size: 13px;
@@ -219,7 +337,7 @@ transform: translateY(-5px);
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 4.5rem;
+        top: 3.1rem;
         right: 0;
         background-color: #333;
         padding: 1rem;
@@ -235,6 +353,18 @@ transform: translateY(-5px);
 .card{
     width: 250px;
 }
+.carrucel{
+        max-width: 300px;  
+        display: block;
+    }
+    .carrucel-desk{
+        display: none;
+    }
+
+.trayectoria-fila {
+    margin-inline: 20px;
+}
+
 }
 
 @media (max-width: 500px) {
@@ -274,10 +404,36 @@ transform: translateY(-5px);
     .box {
         font-size: 10px;
         width: 150px;
-        height: 100px;
+        height: 110px;
         margin-inline: 10px;
     }
     .box img{
         width: 30px;
+    }
+
+    .trayectoria-fila {
+        justify-content: center; 
+        display: flex; /* Asegura que las columnas sean flexibles */
+    gap: 20px;
+        height: 100%;
+        border: 0; 
+    }
+    
+    .trayecto-col {
+        padding: 20px; /* Espaciado interno */
+        border: 2px solid rgba(129, 129, 129, 0.591); 
+        text-align: justify;
+        font-size: 10px;
+        transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+        min-height: 100px; /* Define una altura mínima para mantener consistencia */
+
+    }
+    .trayectoria li{
+        font-size: 10px;
+        line-height: 2; 
+        text-align: justify;
+    }
+    .footer-texto{
+        font-size: 16px;
     }
 }
